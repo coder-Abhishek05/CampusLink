@@ -1,0 +1,572 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  /* Heading */
+  .head1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  /* Filter Box */
+  .filter-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .filter-btn {
+    padding: 10px 20px;
+    border: 2px solid #007bff;
+    background-color: white;
+    color: #007bff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .filter-btn:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .filter-btn.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Button to Ask Question */
+  .ask-question {
+    margin-bottom: 20px;
+  }
+  
+  .ask-btn {
+    padding: 12px 30px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .ask-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Question Display Box */
+  .question-box {
+    width: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
+  }
+  
+  .question {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .question:last-child {
+    border-bottom: none;
+  }
+  
+  .question h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .question p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .question-box {
+      padding: 15px;
+    }
+  
+    .filter-box {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .filter-btn {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .ask-btn {
+      width: 100%;
+    }
+  }
+
+  /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    width: 100%; /* Ensure it takes full width */
+  }
+  
+  .navbar-nav {
+    margin-left: 0; /* Remove any automatic centering */
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 15px; /* Space between nav items */
+  }
+  
+  .navbar-collapse {
+    display: flex;
+    justify-content: flex-start; /* Ensure the items align to the left */
+  }
+  
+  .navbar-toggler {
+    border: none; /* Remove border around the toggle */
+  }
+  
+  /* Remove centering of navbar */
+  .navbar .container-fluid {
+    display: flex;
+    justify-content: flex-start; /* Align the content to the left */
+  }
+
+  /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Heading */
+  .head1 {
+    text-align: center;
+    margin-top: 20px; /* Adjusted margin-top to reduce gap */
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    width: 100%;
+  }
+  
+  .navbar-nav {
+    margin-left: 0; /* Remove any automatic centering */
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 15px; /* Space between nav items */
+  }
+  
+  .navbar-collapse {
+    display: flex;
+    justify-content: flex-start; /* Ensure the items align to the left */
+  }
+  
+  .navbar-toggler {
+    border: none; /* Remove border around the toggle */
+  }
+  
+  .navbar .container-fluid {
+    display: flex;
+    justify-content: flex-start; /* Align the content to the left */
+  }
+  
+  /* Filter Box */
+  .filter-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center; /* Center the filter buttons */
+  }
+  
+  .filter-btn {
+    padding: 10px 20px;
+    border: 2px solid #007bff;
+    background-color: white;
+    color: #007bff;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .filter-btn:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .filter-btn.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Button to Ask Question */
+  .ask-question {
+    margin-top: 20px;
+  }
+  
+  .ask-btn {
+    padding: 12px 30px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .ask-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Question Display Box */
+  .question-box {
+    width: 70%; /* Ensure the question box doesn't take full width */
+    max-width: 1200px; /* Limit the max width for larger screens */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 30px; /* Margin from the top of the page */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow-x: hidden;
+  }
+  
+  .question {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .question:last-child {
+    border-bottom: none;
+  }
+  
+  .question h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .question p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .question-box {
+      padding: 15px;
+    }
+  
+    .filter-box {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .filter-btn {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .ask-btn {
+      width: 100%;
+    }
+  }
+
+  .suggestions {
+    position: absolute;
+    background: white;
+    border: 1px solid #ddd;
+    max-width: 80%;
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .suggestion-item {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .suggestion-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .search-container {
+    position: relative;
+    width: fit-content; /* Adjusts width to the content of the search form */
+  }
+  
+  #searchBar {
+    width: 100%; /* Set the search bar width as needed */
+  }
+  
+  .suggestion-box {
+    position: absolute;
+    top: 100%; /* Places the suggestion box right below the search bar */
+    left: 0;
+    width: 100%; /* Matches the search bar width */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    max-height: 200px; /* Set a max height if needed for scrolling */
+    overflow-y: auto; /* Allows scrolling if suggestions overflow */
+  }
+  
+  .suggestion-box div {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .suggestion-box div:hover {
+    background-color: #f1f1f1;
+  }
+
+  .card {
+    max-width: 70rem; /* Set this to the preferred size */
+    width: 300%; /* Ensures it adapts to the container if needed */
+    position: relative;
+    right: 20rem;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #007bff !important;
+}
+
+.navbar-nav .nav-link {
+  color: #555 !important;
+  font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff !important;
+}
+
+.navbar-toggler-icon {
+  color: #007bff;
+}
+
+/* Search Container */
+.search-container {
+  position: relative;
+}
+
+.suggestion-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #f1f1f1;
+}
+
+.suggestion-box.show {
+  display: block;
+}
+
+/* Page Heading */
+.head1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Filter Box */
+.filter-box {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.filter-btn {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: 1px solid #007bff;
+  background-color: #fff;
+  color: #007bff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-btn.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.filter-btn:hover {
+  background-color: #f1f1f1;
+}
+
+/* Ask Button */
+.ask-question {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.ask-btn {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.ask-btn:hover {
+  background-color: #218838;
+}
+
+/* Question Cards */
+#questionBox .card {
+  margin: 15px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+#questionBox .card:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  font-weight: bold;
+  background-color: #f8f9fa;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+}
+
+.actions button {
+  margin-right: 10px;
+}
+
+/* Like Button */
+button.btn-like {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button.btn-like:hover {
+  background-color: #0056b3;
+}
+
+/* Card Footer Text */
+.card-footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}

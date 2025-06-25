@@ -1,0 +1,85 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COURSE PAGE</title>
+    <link rel="stylesheet" href="/css/course.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000;">
+        <div class="container-fluid">
+            <!-- Logo and Brand Name -->
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <!-- <img src="/images/homepage_img/CampusLink.png" alt="Logo" style="width: 100px; height: 40px; margin-right: 8px;"> -->
+                <span style="font-size: 1.5rem; font-weight: bold; font-family: Arial, sans-serif;">CampusLink</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li> -->
+                </ul>
+                <ul class="navbar-nav">
+                    <% if (userID) { %>
+                        <li class="nav-item">
+                            <!-- <li><a href="/profile/<%= userID %>">Profile</a></li> -->
+                            <a class="nav-link" href="/profile/<%= userID %>">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/user/logout">Logout</a>
+                        </li>
+                    <% } else { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="/register">Register</a>
+                        </li> -->
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="cource">
+        <h1>Best Courses We Offer</h1>
+        <p> <span>"</span> There are no secrets to success. It is the result of preparation, hard work, and learning from failure <span>"</span></p>
+        <div class="row">
+            <a href="#">
+                <div class="clom">
+                    <h3>INFORMATION TECHNOLOGY</h3>
+                    <p>This course provides a comprehensive understanding of the use of computers and telecommunications to store, retrieve, and transmit data. It covers key areas such as software development, network administration, cybersecurity, and database management. The course emphasizes practical skills in solving technical problems and designing IT solutions!</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="clom">
+                    <h3>INFORMATION TECHNOLOGY-BUSINESS INFORMATICS</h3>
+                    <p>This is an interdisciplinary field that combines IT, business management, and informatics to enhance business processes through technology. It focuses on analyzing and improving how businesses use data, software systems, and IT infrastructure to make informed decisions. IT-BI covers areas like data analytics, enterprise systems, and digital transformation strategies.</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="clom">
+                    <h3>ELECTRONICS AND COMPUTER ENGINEERING</h3>
+                    <p>This course focuses on the design, analysis, and application of electronic devices, circuits, and communication systems. It covers a wide range of subjects, including analog and digital electronics, signal processing, microprocessors, and telecommunications. The course emphasizes the development of both hardware and software solutions for modern communication technologies.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Question</title>
+  <link rel="stylesheet" href="/css/view.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000;">
+    <div class="container-fluid">
+  
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            
+            <span style="font-size: 1.5rem; font-weight: bold; font-family: Arial, sans-serif;">CampusLink</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <% if (user) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile/<%= user.id %>">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/logout">Logout</a>
+                    </li>
+                <% } else { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    
+                <% } %>
+            </ul>
+              
+            </div>
+        </div>
+    </div>
+  </nav>
+  <div class="container">
+    <h2>Question Details</h2>
+    
+    
+    <div class="question">
+      <h3><%= question.title %></h3>
+      <p><%= question.question %></p>
+    </div>
+
+    <h3>Answers</h3>
+
+    
+    <div class="answers">
+      <% if (answers.length > 0) { %>
+        <% answers.forEach(answer => { %>
+          <div class="answer">
+            <p><%= answer.answerText %></p>
+            <small>Answered by: <%= answer.user.fullname %></small>
+
+            
+            <% if (user && user.id.toString() === answer.user.id.toString()) { %>
+              <div class="actions">
+                <form action="/faq/edit-answer/<%= answer.id %>" method="GET" class="inline">
+                  <button type="submit" class="btn edit-btn">Edit</button>
+                </form>
+                <form action="/faq/delete-answer/<%= answer.id %>" method="POST" class="inline" onsubmit="return confirm('Are you sure you want to delete this answer?');">
+                  <button type="submit" class="btn delete-btn">Delete</button>
+                </form>
+              </div>
+            <% } %>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <p>No answers yet. Be the first to answer!</p>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>

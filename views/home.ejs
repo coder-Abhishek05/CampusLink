@@ -1,0 +1,291 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusLink - Connect IIITA Students</title>
+    <link rel="stylesheet" href="/css/homepage.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+
+<body>
+
+        <section class="header">
+            <!-- <img src="/images/homepage_img/CampusLink.png" alt="CampusLink Logo"> -->
+            <nav class="main-nav">
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <% if (locals.user) { %>
+                        <li>Hello <%= locals.user.fullname %></li>
+                    <% } %>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#students">Meet Students</a></li>
+                    <!-- <li><a href="#testimonials">Testimonials</a></li> -->
+                    <li><a href="/contactUs">Contact Us</a></li>
+                    <% if (locals.user) { %>
+                        <li><a href="/profile/<%= userID %>">Profile</a></li>
+                        <li><a href="/user/logout">Logout</a></li>
+                    <% } else {%>
+                        <li><a href="/login">Login/Signup</a></li>
+                    <% } %>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+        <div class="text-box">
+            <h1>Indian Institute Of Information Technology Allahabad.</h1>
+            <a href="https://www.iiita.ac.in/" class="hero-btn">Please Visit Original College Website Click Here.</a>
+        </div>
+    </section>
+<% if (typeof locals.user !== "undefined" && locals.user.role === "USER") { %>
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">What do you want to do today?</h2>
+            <ul id="iconlist">
+                <li class="icon-card">
+                    <a href="/main/home">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834019/icon4_bzuaam.png" class="iconlogo" alt="College News Icon">
+                        </div>
+                        <span class="icon-text">Add deets about what's new in college.</span>
+                    </a>
+                </li>
+                <li class="icon-card">
+                    <a href="/connect-seniors">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834018/icon2_hccblw.png" class="iconlogo" alt="Connect Icon">
+                        </div>
+                        <span class="icon-text">Connect to the students waiting for you.</span>
+                    </a>
+                </li>
+                <li class="icon-card">
+                    <a href="/faq">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834018/icon3_py1ka4.png" class="iconlogo" alt="FAQ Icon">
+                        </div>
+                        <span class="icon-text">Go to the FAQ section.</span>
+                    </a>
+                </li>
+                <li class="icon-card">
+                    <a href="/college-details">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834015/icon1_pnln5s.png" class="iconlogo" alt="College Details Icon">
+                        </div>
+                        <span class="icon-text">Go through details about the college.</span>
+                    </a>
+                </li>
+                <li class="icon-card">
+                    <a href="/college-info">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834023/society-icon-illustration-vector_rknttp.jpg" class="iconlogo" alt="Societies Icon">
+                        </div>
+                        <span class="icon-text">Go through the societies at college</span>
+                    </a>
+                </li>
+                <li class="icon-card">
+                    <a href="/alumini">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834014/alumini_henuy7.png" class="iconlogo" alt="Societies Icon">
+                        </div>
+                        <span class="icon-text">Go through the alumini of the college</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+<% } else if (typeof locals.user !== "undefined" && locals.user.role === "IIITian") { %>
+    
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">What do you want to do today?</h2>
+            <ul id="iconlist">
+                <li class="icon-card">
+                    <a href="/main/home">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834019/icon4_bzuaam.png" class="iconlogo" alt="News Icon">
+                        </div>
+                        <span class="icon-text">Add deets about what's new in college.</span>
+                    </a>
+                </li>
+                <li class="icon-card">
+                    <a href="/connect-seniors">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834018/icon2_hccblw.png" class="iconlogo" alt="Connect Icon">
+                        </div>
+                        <span class="icon-text">Connect to the students waiting for you.</span>
+                    </a>
+                </li>
+                <li class="icon-card">
+                    <a href="/faq">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834018/icon3_py1ka4.png" class="iconlogo" alt="FAQ Icon">
+                        </div>
+                        <span class="icon-text">Go to the FAQ section.</span>
+                    </a>
+                </li>
+                <li class="icon-card">
+                    <a href="/college-details">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834015/icon1_pnln5s.png" class="iconlogo" alt="College Details Icon">
+                        </div>
+                        <span class="icon-text">Go through details about the college.</span>
+                    </a>
+                </li>
+                <li class="icon-card">
+                    <a href="/college-info">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834023/society-icon-illustration-vector_rknttp.jpg" class="iconlogo" alt="Societies Icon">
+                        </div>
+                        <span class="icon-text">Go through the societies at college</span>
+                    </a>
+                </li>
+                <li class="icon-card">
+                    <a href="/alumini">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834014/alumini_henuy7.png" class="iconlogo" alt="Societies Icon">
+                        </div>
+                        <span class="icon-text">Go through the alumini of the college</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+<% } else { %>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About CAMPUSLINK</h2>
+            <p class="section-description">Welcome to CampusLink, an innovative platform designed to bridge the gap between existing students and prospective candidates of IIIT Allahabad.
+                Whether you’re seeking firsthand experiences, academic advice, or just a glimpse into campus life, CampusLink provides a personalized approach to help all of you new students make informed decisions about your future at IIIT Allahabad.
+            </p>
+            <hr class="line">
+            <h3 class="section-subtitle">CampusLink at a glance</h3>
+        
+            <ul id="iconlist">
+                <li class="icon-card">
+                    <a href="/main/home">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834019/icon4_bzuaam.png" class="iconlogo" alt="News Icon">
+                        </div>
+                        <span class="icon-text">Add deets about what's new in college.</span>
+                    </a>
+                </li>
+                <li class="icon-card">
+                    <a href="/connect-seniors">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834018/icon2_hccblw.png" class="iconlogo" alt="Connect Icon">
+                        </div>
+                        <span class="icon-text">Connect to the students waiting for you.</span>
+                    </a>
+                </li>
+                <li class="icon-card">
+                    <a href="/faq">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834018/icon3_py1ka4.png" class="iconlogo" alt="FAQ Icon">
+                        </div>
+                        <span class="icon-text">Go to the FAQ section.</span>
+                    </a>
+                </li>
+                <li class="icon-card">
+                    <a href="/college-details">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834015/icon1_pnln5s.png" class="iconlogo" alt="College Details Icon">
+                        </div>
+                        <span class="icon-text">Go through details about the college.</span>
+                    </a>
+                </li>
+                <li class="icon-card">
+                    <a href="/college-info">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834023/society-icon-illustration-vector_rknttp.jpg" class="iconlogo" alt="Societies Icon">
+                        </div>
+                        <span class="icon-text">Go through the societies at college</span>
+                    </a>
+                </li>
+                <li class="icon-card">
+                    <a href="/alumini">
+                        <div class="icon-wrapper">
+                            <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750834014/alumini_henuy7.png" class="iconlogo" alt="Societies Icon">
+                        </div>
+                        <span class="icon-text">Go through the alumini of the college</span>
+                    </a>
+                </li>
+            </ul>
+            <hr class="line">
+        </div>
+    </section>
+    
+<% } %>
+
+<section id="students" class="section">
+    <div class="container">
+        <h2>Meet Alumini Students</h2>
+        <ul class="student-cards">
+            <li class="card">
+                <div class="student-card">
+                    <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750833423/Chaitanya-Reddy_mqe4vr.jpg" alt="Student 1">
+                    <h3>Chaitanya Reddy</h3>
+                    <p class="degree">Btech ec</p>
+                    <p>ACCURATE SIGN CHANGE FOR RADIO FREQUENCY TRANSMITTERS.</p>
+                </div>
+            </li>
+            <li class="card">
+                <div class="student-card">
+                    <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750833424/dr.rahul_pfk5gb.jpg" alt="Student 2">
+                    <h3>Dr.Rahul</h3>
+                    <p class="degree">MTech EC</p>
+                    <p>YOUNG SCIENTIST </p>
+                </div>
+            </li>
+            <li class="card">
+                <div class="student-card">
+                    <img src="https://res.cloudinary.com/dhhe18dia/image/upload/v1750833425/DEEPAK_KUMAR_wy2v6g.png" alt="Student 3">
+                    <h3>Deepak Kumar</h3>
+                    <p class="degree">B.Tech IT</p>
+                    <p>Unsung Hero award</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+
+
+    <!-- <footer>
+        <div class="container">
+            <p>&copy; 2024 CampusLink. All rights reserved.</p>
+        </div>
+    </footer> -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#about">About Us</a> |
+                    <a href="#students">Meet Students</a> |
+                    <a href="/contactUs">Contact Us</a> |
+                    <a href="https://www.iiita.ac.in/" target="_blank">IIIT Allahabad</a>
+                </div>
+                <div class="social-media">
+                    <!-- <a href="https://facebook.com/iiita" target="_blank"><i class="fa fa-facebook"></i> facebook</a>
+                    <a href="https://twitter.com/iiita" target="_blank"><i class="fa fa-twitter"></i>twitter</a>
+                    <a href="https://instagram.com/iiita" target="_blank"><i class="fa fa-instagram"></i>instagram</a> -->
+                    <a href="https://in.linkedin.com/school/indian-institute-of-information-technology-allahabad-india/" target="_blank"><i class="fa fa-linkedin"></i>linkedin</a>
+                </div>
+                <p>&copy; 2024 CampusLink. All rights reserved.</p>
+                <p>Indian Institute of Information Technology Allahabad</p>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="/javascripts/homepage.js"></script>
+
+</body>
+</html>

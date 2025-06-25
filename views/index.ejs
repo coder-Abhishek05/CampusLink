@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.title %></title>
+    <meta name="description" content="<%- locals.description %>">
+    <link rel='stylesheet' href="/css/styles.css">
+    <script type="text/javascript" defer src="/javascripts/script.js"></script>
+</head>
+<body>
+    <%- include('partials/search.ejs') %>
+    <div class="container">
+   <%- include('partials/header.ejs') %>
+   
+    
+    <main class="main">
+        <div class="author">
+        <% if (typeof user !=="undefined" && (user.role==="IIITian" || user?.role === 'ADMIN')) { %>
+          
+          <div class="author">
+            <h1 class="author__heading">What's New at IIITA</h1>
+            <p class="author__body">Go through the latest events at IIITA and upload your blogs.</p>
+          </div>
+          <div class="admin-title">
+            <h2>Posts</h2>
+            <a href="/main/add-post" class="button">+ Add New</a>
+          </div>
+          
+          <ul class="admin-posts">
+          
+            <% data.forEach(post => { %>
+             
+              <li>
+                <a href="/main/post/<%= post._id %>">
+                  <%= post.title %> &nearr;
+                </a>
+                <% if (typeof locals.user !== "undefined" && user?.id === post.createdBy.id) { %>
+                 
+                <% } %>
+                <div class="admin-post-controls">
+                  <a href="/main/edit-post/<%= post._id %>" class="btn">Edit</a>
+          
+                  <form action="/main/delete-post/<%= post._id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete" class="btn-delete btn">
+                  </form>
+                   
+                 
+                </div>
+      
+          
+              </li>
+          
+            <% }) %>
+          </ul>
+          <% } else { %>
+            
+          <h1 class="author__heading">What's Going on in IIITA</h1>
+          <p class="author__body">Go through the latest events at IIITA by scrolling through these blogs posted by the students.</p>
+        </div>
+        <section class="articles">
+          <h2 class="articles__heading">Latest Posts</h2>
+        
+          <ul class="article-ul">
+              <% data.forEach(post => { %>
+               
+              
+              <li>
+                <a href="/main/post/<%= post._id%>">
+                  <span><%= post.title %></span>
+                  <span class="article-list__date"><%= post.createdAt.toDateString()%></span>
+                </a>
+              </li>
+              <% }) %>
+          </ul>
+            
+      
+        <% }  %>
+    </main>
+  
+   <%- include('partials/footer.ejs') %>
+</div>
+   
+</body>
+</html>

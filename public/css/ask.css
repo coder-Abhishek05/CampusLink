@@ -1,0 +1,88 @@
+
+
+ 
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+ 
+  .navbar {
+    margin-bottom: 30px;
+  }
+  
+ 
+  .ask-question-container {
+    width: 80%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    left: 50vh;
+  }
+  
+  .ask-heading {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .ask-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .ask-form label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .ask-form input,
+  .ask-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+  .ask-btn {
+    padding: 12px 30px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    position: relative;
+    left: 36vh;
+  }
+  
+  .ask-btn:hover {
+    background-color: #218838;
+  }
+  
+ 
+  .footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #777;
+  }
+  
+  .footer p {
+    font-size: 14px;
+  }
+  

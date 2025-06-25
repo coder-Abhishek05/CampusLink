@@ -1,0 +1,144 @@
+
+
+  /* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #000;
+}
+
+.navbar .navbar-brand {
+  color: white !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .nav-link {
+  color: white !important;
+}
+
+.navbar .nav-link.active {
+  color: #ffc107 !important;
+}
+
+.navbar .navbar-toggler-icon {
+  background-color: white;
+}
+
+/* Main Content Container */
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+h2, h3 {
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin-top: 30px;
+}
+
+/* Question Section */
+.question {
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.question h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.question p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Answers Section */
+.answers {
+  margin-top: 20px;
+}
+
+.answer {
+  padding: 15px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.answer p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.answer small {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.875rem;
+  color: #777;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.actions .btn {
+  font-size: 0.875rem;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+
+.actions .edit-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.actions .delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.actions .btn:hover {
+  opacity: 0.8;
+}
+
+.actions form.inline {
+  display: inline;
+}
+
+/* Empty Answer Section */
+.answers p {
+  font-size: 1rem;
+  color: #777;
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  font-size: 0.875rem;
+  color: #555;
+  background-color: #f8f9fa;
+}

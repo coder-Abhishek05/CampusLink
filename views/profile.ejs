@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/home-style.css">
+    <link rel="stylesheet" href="/css/profile-style.css" />
+    <script src="https://kit.fontawesome.com/eabac940d1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">Profile</div>
+        <div class="nav-items">
+            <ul>
+                <li><a href="/"> Home</a></li>
+                <% if (currentUser && currentUser.role === "ADMIN") { %>
+                    <li><a href="/admin">Dashboard</a></li>
+                <% } else { %>
+                    <li><a href="/profile/<%= currentUser.id %>"> My Profile</a></li>
+                <% } %>
+                <li><a href="/user/logout"> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="profile-container">
+            <div class="profile-info-container">
+                <div class="dp" tabindex="0">
+                    <img src="<%= userdata.profileImageURL || 'https://res.cloudinary.com/dhhe18dia/image/upload/v1750833426/default_zswyvu.png' %>" alt="Profile Picture" />
+                </div>
+                <div class="about">
+                    <p class="username"><%= userdata.fullname || 'Unknown User' %></p>
+                    <p class="bio"><%= userdata.bio || 'No bio available.' %></p>
+                    <p class="web-link">
+                        <a href="http://<%= userdata.weblink %>" target="_blank">
+                            <i class="fa-solid fa-link"></i> <%= userdata.weblink || 'No website provided.' %>
+                        </a>
+                    </p>
+                </div>
+                <hr>
+                <div class="stats">
+                    <!-- <div>
+                        <p>Posts</p>
+                        <p id="pdisplay"><%= userdata.postsCount || 0 %></p> 
+                    </div>
+                    <div>
+                        <p>Likes</p>
+                        <p id="ldisplay"><%= userdata.likesCount || 0 %></p> 
+                    </div> -->
+                </div>
+            </div>
+            <div class="contact-container">
+                <h1>Contacts</h1>
+                <div class="mail-phone">
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:<%= userdata.email %>"><%= userdata.email || 'No email provided.' %></a>
+                    </p>
+                    <p><i class="fa-solid fa-phone"></i> <%= userdata.phoneno || 'No phone number provided.' %></p>
+                </div>
+                <div class="socials">
+                    <% if (userdata.facebook) { %>
+                        <a href="<%= userdata.facebook %>" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <% } %>
+                    <% if (userdata.instagram) { %>
+                        <a href="<%= userdata.instagram %>" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <% } %>
+                    <% if (userdata.twitter) { %>
+                        <a href="<%= userdata.twitter %>" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <% } %>
+                    <% if (userdata.whatsapp) { %>
+                        <a href="http://wa.me/+91<%= userdata.whatsapp %>" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <% } %>
+                </div>
+                <% if (currentUser && currentUser.fullname === userdata.fullname) { %>
+                    <div class="edit-profile-container">
+                        <a href="/editprofile/<%= currentUser.id %>"><i class="fa-solid fa-pencil"></i> Edit Profile</a>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </main>
+    
+
+    <script>
+        
+        document.getElementById("ldisplay").innerHTML = document.getElementById("lcount").innerHTML;
+        document.getElementById("pdisplay").innerHTML = document.getElementById("pcount").innerHTML;
+    </script>
+</body>
+</html>

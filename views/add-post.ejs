@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.title %></title>
+    <meta name="description" content="<%- locals.description %>">
+    <link rel='stylesheet' href="/css/styles.css">
+    <script type="text/javascript" defer src="/javascripts/script.js"></script>
+    <!-- //<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+</head>
+<body>
+    <%- include('partials/search.ejs') %>
+    <div class="container">
+   <%- include('partials/header.ejs') %>
+   
+    
+    <main class="main"> 
+        <div class="admin-title">
+          <h2>Add New Post</h2>
+          <a href="/main/home" class="back-button">&larr; Back</a>
+        </div>
+        
+        <form action="/main/add-post" method="POST" enctype="multipart/form-data">
+          <div class="mb-3 custom-file-upload">
+            <label for="coverImage" class="form-label">Cover Image</label>
+            
+            <!-- Custom styled file input container -->
+            <div class="custom-file-wrapper">
+                <!-- Hidden actual file input -->
+                <input type="file" id="coverImage" name="coverImage" onchange="displayFileName()" class="file-input-hidden">
+                
+                <!-- Visible part: The fake input where user clicks to choose file -->
+                <div class="custom-input">
+                    <span class="choose-file-part" onclick="document.getElementById('coverImage').click()">Choose File</span>
+                    
+                    <!-- Vertical line -->
+                    <div class="vertical-line"></div>
+                    
+                    <span class="file-name-display" id="file-name">No file chosen</span>
+                </div>
+              </div>
+            </div>
+          <label for="title"><b>Title</b></label>
+          <input type="text" placeholder="Post Title" name="title">
+        
+          <label for="body"><b>Content</b></label>
+          <textarea name="body" cols="50" rows="10"></textarea>
+        
+          <input type="submit" value="Add" class="btn">
+        
+        </form>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script></main>
+        
+<script>
+    function displayFileName() {
+        const fileInput = document.getElementById('coverImage');
+        const fileNameDisplay = document.getElementById('file-name');
+        // Update the file name span with the selected file name, or a default message
+        fileNameDisplay.textContent = fileInput.files.length > 0 ? fileInput.files[0].name : 'No file chosen';
+    }
+</script>
+  
+   <%- include('partials/footer.ejs') %>
+</div>
+   
+</body>
+</html>

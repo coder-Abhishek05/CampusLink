@@ -1,0 +1,460 @@
+
+
+body {
+    /* background-image: url('../images/autumn-background-with-space-for-text-and-leaves-around-free-image.webp');  */
+    background-image: url('https://res.cloudinary.com/dhhe18dia/image/upload/v1750838462/960x0_jju0wd.webp'); 
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh; 
+    margin: 0; 
+    color: #ffffff; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+}
+
+
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid #2ecc71;
+}
+
+.nav-link, .navbar-brand {
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #2ecc71 !important;
+}
+
+.search-container {
+    position: relative;
+}
+
+.suggestion-box {
+    position: absolute;
+    background: #333333;
+    border: 1px solid #2ecc71;
+    color: #ffffff;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.suggestion-item {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #2ecc71;
+    color: #000;
+}
+
+/* Header Styling */
+.head1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 20px;
+    color: #2ecc71;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Filter Box Styling */
+.filter-box {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.filter-btn {
+    background-color: transparent;
+    color: #2ecc71;
+    border: 1px solid #2ecc71;
+    margin: 0 10px;
+    padding: 8px 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: #2ecc71;
+    color: #000;
+}
+
+/* Ask Question Button */
+.ask-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    background-color: #2ecc71;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ask-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Question Display Box Styling */
+#questionBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    border: 1px solid #2ecc71;
+    width: 80%;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-header, .card-footer {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #2ecc71;
+}
+
+.card-title {
+    font-size: 1.25rem;
+}
+
+.actions .btn {
+    margin-right: 5px;
+}
+
+.btn-primary {
+    background-color: #2ecc71;
+    border: none;
+    color: #000;
+}
+
+.btn-primary:hover {
+    background-color: #27ae60;
+    color: #ffffff;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+.btn-like {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-like:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Additional Styling for Smooth Layout */
+.container-fluid, .d-flex {
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+a, button {
+    text-decoration: none;
+}
+
+input[type="search"] {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="search"]::placeholder {
+    color: #000;
+}
+
+footer, .card-footer {
+    font-size: 0.85rem;
+}
+
+
+.navbar {
+    background-color: #343a40; 
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .nav-link.active {
+    color: #ffffff !important; 
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active:hover {
+    color: #ffc107 !important; 
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5); 
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Style for suggestion box in the search bar */
+.suggestion-box {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestion-item:hover {
+    background-color: #f8f9fa; 
+}
+
+
+.navbar {
+    background-color: #343a40; 
+    color: #ffffff; 
+    padding: 1rem;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #ffffff !important; 
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #ffc107 !important;
+}
+
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6); 
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+.navbar-collapse {
+    background-color: #343a40; 
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    padding: 0.5rem 1rem;
+}
+
+
+.suggestion-box {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    position: absolute;
+    z-index: 1000;
+    max-height: 200px;
+    width: 100%; 
+    overflow-y: auto;
+}
+
+.suggestion-item:hover {
+    background-color: #f8f9fa;
+}
+
+
+.navbar {
+    background-color: #000000; 
+    color: #ffffff; 
+    padding: 1rem;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #ffffff !important; 
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #ffcc00 !important; 
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.6)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+.navbar-collapse {
+    background-color: #000000; 
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+
+.suggestion-box {
+    background-color: #333333; 
+    border: 1px solid #cccccc;
+    position: absolute;
+    z-index: 1000;
+    max-height: 200px;
+    width: 100%; 
+    overflow-y: auto;
+    color: #ffffff; 
+}
+
+.suggestion-item:hover {
+    background-color: #555555;
+    color: #ffcc00; 
+}
+
+.form-control[type="search"] {
+    background-color: #222222; 
+    color: #ffffff; 
+    border: 1px solid #555555;
+}
+
+.form-control[type="search"]::placeholder {
+    color: #aaaaaa;
+}
+
+.btn-outline-success {
+    color: #ffcc00; 
+    border-color: #ffcc00;
+}
+
+.btn-outline-success:hover {
+    background-color: #ffcc00; 
+    color: #000000; 
+}
+
+
+.search-container {
+    position: relative;
+    display: inline-block;
+}
+
+.suggestion-box {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    background-color: #fff; 
+    border: 1px solid #ddd;
+    z-index: 1000; 
+    max-height: 200px; 
+    overflow-y: auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.suggestion-box div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-box div:hover {
+    background-color: #f0f0f0;
+}
+
+/**/
+
+.search-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .suggestion-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-width: 400px; 
+    width: 100%;  
+    z-index: 100;
+  }
+
+  .suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0);
+    max-height: 200px; /* Limit the height if there are many suggestions */
+    overflow-y: auto;  /* Add scroll if there are too many suggestions */
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;  /* Ensure it appears above other content */
+    width: 100%; /* Keep it the same width as the input field */
+    max-width: 400px; /* Or set a max width */
+  }
+  
+  .suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .suggestion-item:hover {
+    background-color: #030000;
+  }
+
+  .footer {
+    background-color: #343a40;
+    padding: 20px 0;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.footer h5 {
+    font-weight: bold;
+    color: #ffc107;
+    margin-bottom: 15px;
+}
+
+.footer a {
+    color: #d4d4d4;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #ffc107;
+    text-decoration: underline;
+}
+
+.footer .container {
+    max-width: 960px;
+}
+
+.footer .row div {
+    margin-bottom: 20px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 12px;
+}
+
+  

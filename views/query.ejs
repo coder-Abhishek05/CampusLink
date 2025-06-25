@@ -1,0 +1,30 @@
+<!-- views/query.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Submit Your Query</title>
+  <link rel="stylesheet" href="/css/query.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Submit Your Query</h2>
+    <form action="/query/submit-query" method="POST">
+      <div class="form-group">
+        <label for="userName">Username:</label>
+        <input type="text" id="userName" name="userName" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="queryText">Your Query:</label>
+        <textarea id="queryText" name="queryText" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn submit-btn">Submit Query</button>
+    </form>
+  </div>
+</body>
+</html>

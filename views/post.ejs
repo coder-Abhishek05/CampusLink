@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= locals.title %></title>
+    <meta name="description" content="<%- locals.description %>">
+    <link rel='stylesheet' href="/css/styles.css">
+    <script type="text/javascript" defer src="/javascripts/script.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <header class="header"  style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="/" class="header__logo">CAMPUSLINK</a>
+            <nav class="header__nav">
+                <ul style="display: flex; list-style: none; margin: 0; padding: 0; margin-right:-60px" >
+                    <li>
+                        <a href="/" class=""> Home Page</a>
+                    </li>
+
+                    <li>
+                        <a href="/main/home" class=""> Back</a>
+                    </li>
+                </ul>
+        
+            </nav>
+        
+            
+        </header>
+   
+    
+    <main class="main">
+        <h1><%= data.title %></h1>
+        <div class="image-container">
+<img src="<%= data.coverImageURL %>"  class="blogimg"/></div>
+<article class="article"><%= data.body %></article>
+
+<div class="container mt-4">
+    <div class="profile-info">
+        <img src="<%= data.createdBy.profileImageURL %>" width="50px" class="profile-pic">
+        <span class="full-name">Created by <%= data.createdBy.fullname %></span>
+    </div>
+</div>
+
+
+
+    </main>
+  
+   <%- include('partials/footer.ejs') %>
+</div>
+   
+</body>
+</html>

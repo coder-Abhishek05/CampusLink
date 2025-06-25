@@ -1,0 +1,123 @@
+
+
+ 
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+
+.navbar {
+  background-color: #000;
+}
+
+.navbar .navbar-brand {
+  color: white !important;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .nav-link {
+  color: white !important;
+}
+
+.navbar .nav-link.active {
+  color: #ffc107 !important;
+}
+
+.navbar .navbar-toggler-icon {
+  background-color: white;
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+h2 {
+  font-family: Arial, sans-serif;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  resize: vertical;
+  margin-top: 5px;
+}
+
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+
+button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #218838;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  font-size: 0.875rem;
+  color: #555;
+  background-color: #f8f9fa;
+}

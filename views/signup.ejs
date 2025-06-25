@@ -1,0 +1,212 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup form</title>
+    <link rel="stylesheet" href="/css/loginpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <style>
+        
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            border-radius: 5px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #000;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function toggleAdminKeyField() {
+            const roleSelect = document.getElementById('role');
+            const adminKeyRow = document.getElementById('adminKeyRow');
+            const emailInput = document.getElementById('email');
+            const submitButton = document.getElementById('submit');
+            const emailError = document.getElementById('emailError');
+
+            
+            if (roleSelect.value === 'ADMIN') {
+                adminKeyRow.style.display = 'block';
+            } else {
+                adminKeyRow.style.display = 'none';
+            }
+
+            
+            if (roleSelect.value === 'IIITian') {
+                if (!emailInput.value.endsWith('@iiita.ac.in')) {
+                    emailError.textContent = 'IIITians must use an @iiita.ac.in email.';
+                    submitButton.disabled = true;
+                } else {
+                    emailError.textContent = '';
+                    submitButton.disabled = false; 
+                }
+            } else {
+                emailError.textContent = ''; 
+                submitButton.disabled = false; 
+            }
+        }
+
+        
+        function validateEmailOnChange() {
+            const roleSelect = document.getElementById('role');
+            const emailInput = document.getElementById('email');
+            const submitButton = document.getElementById('submit');
+            const emailError = document.getElementById('emailError');
+
+            if (roleSelect.value === 'IIITian') {
+                if (!emailInput.value.endsWith('@iiita.ac.in')) {
+                    emailError.textContent = 'IIITians must use an @iiita.ac.in email.';
+                    submitButton.disabled = true; 
+                } else {
+                    emailError.textContent = '';
+                    submitButton.disabled = false; 
+                }
+            }
+        }
+
+        function checkPasswordStrength() {
+            const passwordInput = document.getElementById('password');
+            const submitButton = document.getElementById('submit');
+            const strengthIndicator = document.getElementById('strengthIndicator');
+            const strengthMessage = document.getElementById('strengthMessage');
+            const password = passwordInput.value;
+
+            const minLength = 8;
+            const hasUpperCase = /[A-Z]/.test(password);
+            const hasLowerCase = /[a-z]/.test(password);
+            const hasNumbers = /\d/.test(password);
+            const hasSpecialChars = /[!@#$%^&*]/.test(password);
+
+            let strength = 0;
+
+            if (password.length >= minLength) strength++;
+            if (hasUpperCase) strength++;
+            if (hasLowerCase) strength++;
+            if (hasNumbers) strength++;
+            if (hasSpecialChars) strength++;
+
+            
+            if (strength <= 2) {
+                strengthIndicator.style.backgroundColor = 'red';
+                strengthIndicator.style.width = '30%';
+                strengthMessage.textContent = 'Weak Password';
+                submitButton.disabled = true;
+            } else if (strength === 3) {
+                strengthIndicator.style.backgroundColor = 'orange';
+                strengthIndicator.style.width = '60%';
+                strengthMessage.textContent = 'Medium Password';
+                submitButton.disabled = true;
+            } else if (strength >= 4) {
+                strengthIndicator.style.backgroundColor = 'green';
+                strengthIndicator.style.width = '100%';
+                strengthMessage.textContent = 'Strong Password';
+                submitButton.disabled = false;
+            }
+        }
+
+        
+        window.onload = function() {
+            const submitButton = document.getElementById('submit');
+            submitButton.disabled = true; 
+        };
+
+        
+        window.onload = function() {
+            const errorMessage = "<%= error %>";
+            if (errorMessage) {
+                document.getElementById('modalMessage').textContent = errorMessage;
+                document.getElementById('errorModal').style.display = 'block';
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="whole">
+        <div class="container">
+            <div class="title">Signup form</div>
+            <form action="/user/signup" method="POST" id="signupForm">
+                <div class="row">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="fullname" placeholder="Full Name" required>
+                </div>
+    
+                <div class="row">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" id="email" name="email" placeholder="Email" required oninput="validateEmailOnChange()">
+                </div>
+                <p id="emailError" style="color: red;"></p> 
+
+                
+
+                <p id="emailError" style="color: red;"></p>
+
+                <div class="row">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Password" required oninput="checkPasswordStrength()">
+                    <div id="strengthMessage"></div> 
+                    <div id="strengthIndicator"></div> 
+                    <div id="passwordRequirements">
+                        Password must be at least 8 characters long and include uppercase, lowercase, numbers, and special characters.
+                    </div>
+                </div>
+    
+                <div class="row role">
+                    <label for="role">Select Role:</label>
+                    <select name="role" id="role" required onchange="toggleAdminKeyField()">
+                        <option value="">--Select Role--</option>
+                        <option value="USER">User</option>
+                        <option value="IIITian">IIITian</option>
+                        <option value="ADMIN">Admin</option>
+                    </select>
+                </div>
+    
+                <div class="row" id="adminKeyRow" style="display:none;">
+                    <i class="fas fa-key"></i>
+                    <input type="text" name="adminKey" placeholder="Admin Key">
+                </div>
+    
+                <div class="pass"><a href="/forgot-password">Forgot Password?</a></div>
+                
+                <div class="row bottom">
+                    <input type="submit" id="submit" value="Signup" disabled>
+                </div>
+                <div class="signup-link">Already Have Account? <a href="/login">Login Now</a></div>
+            </form>
+        </div>
+    </div>
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="document.getElementById('errorModal').style.display='none'">&times;</span>
+            <h5>Notice</h5>
+            <p id="modalMessage"><%= error || '' %></p>
+        </div>
+    </div>
+</body>
+</html>
